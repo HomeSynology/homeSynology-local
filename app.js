@@ -12,7 +12,7 @@ const Reqio = require('./app/reqio')
 const reqio = new Reqio(config)
 let socket = reqio.connect()
 socket.on('beat', function (data) {
-  console.log('beat', data)
+  console.log('beat receive local', data)
 })
 socket.on('getapi', async function (data) {
   const url = `http://${config.synoHost}${data.url}`
